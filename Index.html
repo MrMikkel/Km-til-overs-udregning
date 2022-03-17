@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid" id="app">
+
+            <div class="container" style="text-align: center">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Sidste km i alt
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input id="lastWeekKm" v-model.number="lastWeekKm"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-3">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Nuværende km i alt
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input id="thisWeekKm" v-model.number="thisWeekKm"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-3">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Nuværende km til overs
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input id="lastWeekKm2" v-model.number="lastWeekKmTilOvers"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-3">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Dage siden sidst
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input id="dagesidensidst" v-model.number="dageSidenSidst"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+
+                    <button v-on:click="udregnKmUdFraDage" class="btn btn-primary btn-lg btn-block">
+                        Udregn
+                    </button>
+
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+            <div class="row" style="padding-top: 25px; text-align: center;">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                     <div v-if="!null"> <b>{{ kmTilOversAll }}</b> </div>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+
+
+            <!-- <div v-if="!null"> {{ kmTilOvers }} </div> -->
+    </div>
+
+    <script src="js\Index.js"></script>
+</body>
+
+</html>
